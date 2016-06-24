@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Feed</title>
+	<script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+	<script src="//connect.facebook.net/en_US/sdk.js" type="text/javascript"></script>
+	<script src="/js/jquery-3.0.0.min.js" type="text/javascript"></script>
+	<script src="/js/jquery-dateFormat.min.js" type="text/javascript"></script>
+	<script src="/js/app.js" type="text/javascript"></script>
+
+	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>	
+	<script type="text/javascript">
+	 	VK.init({
+	  		apiId: 5520436
+		});
+		FB.init({
+			appId      : '834250080053414',
+			status     : true,
+			xfbml      : true,
+			cookie     : true,
+			version    : 'v2.4'
+		});
+	</script>
+
+	<div id="notAuth" class="hidden">
+		<h3>Пожалуйста авторизуйтесь чтобы оставить сообщение или комментарий.</h3>
+		<div id="login_vk"></div>
+		<div id="login_fb"></div>
+	</div>
+	<div id="Auth" class="hidden">
+		<h2>Здравствуйте, <span id="userName"></span></h2>
+		<p>Это не вы? Нажмите <a href="" id="logout_button"><b>здесь</b></a> и зайдите под своим аккаунтом</p>
+		<form id="newMes" class="form-inline">
+			<div class="form-group">
+			    <textarea rows="7" cols="60" name="mes" id="mes" placeholder="Введите ваше сообщение.." class="form-control" fixed></textarea>
+		    </div>
+			<button id="sendMes" class="btn btn-default">Отправить сообщение</button>
+		</form>
+	</div>
+
+	<div id="feed">
+		<ul id="tree">
+		</ul>
+	</div>
+</body>
+</html>

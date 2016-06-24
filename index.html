@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Cool feed</title>
+	<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+<body id="index">
+<div id="vk_api_transport"></div>
+<script type="text/javascript">
+  window.vkAsyncInit = function() {
+    VK.init({
+      apiId: 5520436
+    });
+  };
+
+  setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "//vk.com/js/api/openapi.js";
+    el.async = true;
+    document.getElementById("vk_api_transport").appendChild(el);
+  }, 0);
+</script>
+
+<script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+
+<script language="javascript">
+VK.init({
+  apiId: 5520436
+});
+function authInfo(response) {
+  if (response.session) {
+  	$(location).attr('href',"/feed.html");
+  } else {
+    //alert('not auth');
+  }
+}
+$(document).ready(function(){
+VK.Auth.getLoginStatus(authInfo);
+});
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '834250080053414',
+      cookie     : true,  // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.2' // use version 2.2
+    });
+
+    FB.getLoginStatus(authInfoFb);
+  };
+  //};
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  function authInfoFb(response) {
+    if (response.status === 'connected') {
+      $(location).attr('href',"/feed.html");
+    } else {
+      //alert('not auth');
+    }
+  }
+</script>
+<h3>Добро пожаловать, для того чтобы перейти к ленте сообщений авторизуйтесь</h3>
+<div id="buttons">
+  <div id="login_vk" onclick="VK.Auth.login(authInfo);"></div>
+  <div id="login_fb" onclick="FB.login(authInfoFb);"></div>
+</div>
+</body>
+</html>

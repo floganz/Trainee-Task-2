@@ -1,0 +1,139 @@
+html {
+	background-color: #f0f2f5;
+}
+
+body {
+	max-width: 1100px;
+	margin: auto;
+	padding: 10px;
+	min-height: 500px;
+}
+
+#index {
+	margin-top: 50px;
+	width: 1000px;
+	height: 400px;
+	padding: 40px;
+	align: center;
+	border-radius: 25px;
+}
+
+#buttons {
+	width: 350px;
+	height: 300px;
+	margin: auto;
+	align: center;
+}
+
+#index div > div {
+	display: inline-block;
+	clear: both;
+	margin: 20px;
+}
+
+#login_vk {
+	margin: auto;
+	width: 320px;
+	height: 60px;
+	background-image: url('/img/vk.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+#login_fb {
+	margin: auto;
+	width: 320px;
+	height: 60px;
+	background-image: url('/img/fb.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#logout_button {
+	color: orange;
+}
+
+#feed, #Auth, #notAuth, #newMes {
+	width: 1100px;
+	margin-bottom: 15px; 
+	align: center;
+	padding-left: 50px;
+}
+
+.hidden {
+	display: none;
+}
+
+.mes {
+	max-width: 600px;
+	min-width: 400px;
+	min-height: 75px;
+	background-color: #cce6ff;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.mesText {
+	margin-top: 5px;
+	margin-left: 5px;
+	text-indent: 1.5em;
+}
+
+.userName {
+	height: 25px;
+	position: top;
+	font-weight: bold;
+}
+
+.mesTime {
+	margin-left: 20px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+}
+
+li {
+	list-style-type: none;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.Expand {
+	float: left;
+	width: 25px;
+	height: 25px;
+}
+
+.Closed {
+	background-image: url('/img/closed.png');
+	background-size: cover;
+}
+
+.Opened {
+	background-image: url('/img/opened.png');
+	background-size: cover;
+}
+
+#ans, #edt {
+	margin-left: 15px;
+}
+
+.footer {
+	height: 25px;
+	clear: both;
+}
+
+#end {
+	text-align: center;
+}
+
+#tree {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+ul {
+	padding-left: 0px;
+	margin-left: 20px;
+}
