@@ -38,7 +38,7 @@ function authInfo(response) {
   }
 }
 $(document).ready(function(){
-VK.Auth.getLoginStatus(authInfo);
+	VK.Auth.getLoginStatus(authInfo);
 });
 </script>
 <script>
@@ -49,8 +49,9 @@ VK.Auth.getLoginStatus(authInfo);
       xfbml      : true,  // parse social plugins on this page
       version    : 'v2.2' // use version 2.2
     });
-
+$(document).ready(function(){
     FB.getLoginStatus(authInfoFb);
+});
   };
   //};
   // Load the SDK asynchronously
